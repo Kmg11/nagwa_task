@@ -1,10 +1,9 @@
 import { AppButton } from "components";
+import { useAppContext } from "context";
 
-interface WelcomeProps {
-	setStartActivity: React.Dispatch<React.SetStateAction<boolean>>;
-}
+export const Welcome = () => {
+	const { openActivity } = useAppContext();
 
-export const Welcome = ({ setStartActivity }: WelcomeProps) => {
 	return (
 		<main className="bg-gray-900 py-6 px-6 rounded text-center">
 			<h1 className="text-2xl font-bold inline-block py-2 px-3 rounded-tl-2xl rounded-br-2xl mb-4">
@@ -19,7 +18,7 @@ export const Welcome = ({ setStartActivity }: WelcomeProps) => {
 				grammar and communication skills in English. Let&apos;s begin!
 			</p>
 
-			<AppButton type="button" onClick={() => setStartActivity(true)}>
+			<AppButton type="button" onClick={openActivity}>
 				Start Activity
 			</AppButton>
 		</main>

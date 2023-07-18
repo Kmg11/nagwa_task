@@ -73,15 +73,31 @@ Structure Enhancements | Create AppButton component | Restructure components fol
 
 ===================================================================================
 
-- Create ActivityFooter component [ Cancel Button, Check Answer Button, Next Question Button ]
+Create ActivityFooter component | Create AppContext, AppProvider and useAppContext hook | Handle exit activity
 
-- Create AppLoading component
+- Create ActivityFooter component 
+	- Exit Button
+	- Check Answer Button
+	- Next Question Button
+	- Submit Button if last question
+- Create AppContext, AppProvider and useAppContext hook
+- Create openActivity and exitActivity functions
+- Handle exit activity
+- Use useAppContext hook in Welcome component
+- Remove WelcomeProps interface
+
+===================================================================================
+
+- Create ActivityContext, ActivityProvider and useActivityContext hook
 - Count of question answered and remaining
+
+- useReducer for activity state
+- Create AppLoading component
 - Handle select answer
 - Create check answer button and next question button
 - Handle functionality for check answer button and next question button and get next question
 - Check responsive design
-- Add rules i follow
+- Add rules and style guide i follow
 	- Index is a collector
 	- don't use default export
 	- use camelCase for variables and functions

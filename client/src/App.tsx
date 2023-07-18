@@ -1,17 +1,23 @@
 import { Activity, Welcome } from "components";
+import { AppProvider } from "context";
 import { Container } from "layout";
 import { useState } from "react";
 
 export function App() {
 	const [startActivity, setStartActivity] = useState(false);
 
-	return (
-		<Container>
-			<div className="my-5">
-				{!startActivity && <Welcome setStartActivity={setStartActivity} />}
+	const openActivity = () => setStartActivity(true);
+	const exitActivity = () => setStartActivity(false);
 
-				{startActivity && <Activity />}
-			</div>
-		</Container>
+	return (
+		<AppProvider value={{ exitActivity, openActivity }}>
+			<Container>
+				<div className="my-5">
+					{!startActivity && <Welcome />}
+
+					{startActivity && <Activity />}
+				</div>
+			</Container>
+		</AppProvider>
 	);
 }
