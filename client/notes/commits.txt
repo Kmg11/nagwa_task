@@ -47,5 +47,14 @@ Add default styles | Create Question component | Create Container component | Cr
 
 ===================================================================================
 
-- Create Progress component
+Create ProgressBar component | Turn off indent from eslint to fix conflict with prettier
+
+- Turn off indent from eslint to fix conflict with prettier
+- Create ProgressBar component
+
+===================================================================================
+
+- Handle select answer
+- Create check answer button and next question button
+- Handle functionality for check answer button and next question button and get next question
 - Create Welcome component
