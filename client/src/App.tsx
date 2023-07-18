@@ -1,16 +1,16 @@
-import { ProgressBar, Question } from "components";
+import { Activity, Welcome } from "components";
 import { Container } from "layout";
+import { useState } from "react";
 
 export function App() {
+	const [startActivity, setStartActivity] = useState(false);
+
 	return (
 		<Container>
 			<div className="my-5">
-				<ProgressBar answeredQuestionsNumber={5} questionsNumber={10} />
+				{!startActivity && <Welcome setStartActivity={setStartActivity} />}
 
-				<Question
-					questionNumber={1}
-					word={{ id: 1, pos: "noun", word: "dog" }}
-				/>
+				{startActivity && <Activity />}
 			</div>
 		</Container>
 	);

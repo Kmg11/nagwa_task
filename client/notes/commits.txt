@@ -54,7 +54,16 @@ Create ProgressBar component | Turn off indent from eslint to fix conflict with 
 
 ===================================================================================
 
+Create Welcome component | Create Activity component | Handle start activity
+
+- Create Welcome component
+- Create Activity component
+- Handle start activity
+
+===================================================================================
+
+- Count of question answered and remaining
 - Handle select answer
 - Create check answer button and next question button
 - Handle functionality for check answer button and next question button and get next question
-- Create Welcome component
+- Check responsive design
