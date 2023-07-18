@@ -88,10 +88,19 @@ Create ActivityFooter component | Create AppContext, AppProvider and useAppConte
 
 ===================================================================================
 
-- Create ActivityContext, ActivityProvider and useActivityContext hook
-- Count of question answered and remaining
+Create ActivityContext | Create activityReducer | Create QuestionType
 
-- useReducer for activity state
+- Create QuestionType
+- Create useActivity hook to handle activity state and functionality
+- Create activityReducer
+- Create [setActivity, checkAnswer, nextQuestion] actions
+- Create [ ActivityActionTypeEnum, ActivityState, SetActivityAction, CheckAnswerAction, NextQuestionAction, ActivityAction ] types
+- Create ActivityContext, ActivityProvider and useActivityContext hook
+
+===================================================================================
+
+- Connect ActivityContext and activityReducer with Activity components
+- Count of question answered and remaining
 - Create AppLoading component
 - Handle select answer
 - Create check answer button and next question button
@@ -104,5 +113,5 @@ Create ActivityFooter component | Create AppContext, AppProvider and useAppConte
 	- use PascalCase for components
 	- add prefix for ui components for example: AppButton
 	- add .ts for non jsx files
-	- add .tsx for jsx files
+	- add .tsx for jsx files or hooks
 - Add README.md file for Structure
