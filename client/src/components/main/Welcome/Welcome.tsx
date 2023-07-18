@@ -1,3 +1,5 @@
+import { AppButton } from "components";
+
 interface WelcomeProps {
 	setStartActivity: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -17,13 +19,9 @@ export const Welcome = ({ setStartActivity }: WelcomeProps) => {
 				grammar and communication skills in English. Let&apos;s begin!
 			</p>
 
-			<button
-				type="button"
-				className="bg-purple-700 text-white font-bold py-2 px-4 rounded mb-3 capitalize hover:bg-purple-600 transition-colors"
-				onClick={() => setStartActivity(true)}
-			>
+			<AppButton type="button" onClick={() => setStartActivity(true)}>
 				Start Activity
-			</button>
+			</AppButton>
 		</main>
 	);
 };

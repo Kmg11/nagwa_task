@@ -62,8 +62,31 @@ Create Welcome component | Create Activity component | Handle start activity
 
 ===================================================================================
 
+Structure Enhancements | Create AppButton component | Restructure components folder
+
+- Create components/ui folder
+- Create components/main folder
+- Move [ Activity, ProgressBar, Question, Welcome ] components to components/main folder
+- Create AppButton component
+- Replace Welcome component button with AppButton component
+- Move [ ProgressBar, Question ] components to Activity component
+
+===================================================================================
+
+- Create ActivityFooter component [ Cancel Button, Check Answer Button, Next Question Button ]
+
+- Create AppLoading component
 - Count of question answered and remaining
 - Handle select answer
 - Create check answer button and next question button
 - Handle functionality for check answer button and next question button and get next question
 - Check responsive design
+- Add rules i follow
+	- Index is a collector
+	- don't use default export
+	- use camelCase for variables and functions
+	- use PascalCase for components
+	- add prefix for ui components for example: AppButton
+	- add .ts for non jsx files
+	- add .tsx for jsx files
+- Add README.md file for Structure
