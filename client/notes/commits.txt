@@ -1,0 +1,35 @@
+===================================================================================
+
+This file tracks changes, commits, and feature planning, streamlining the development process and maximizing productivity. It's an essential tool for staying organized and on track.
+
+===================================================================================
+
+Start Frontend Project | Install Packages | Config | Create Main Structure
+
+- Clean files
+- Handle absolute imports
+
+- Uninstall unnecessary packages
+	- @testing-library/jest-dom
+	- @testing-library/react
+	- @testing-library/user-event
+	- @types/jest
+
+- Setup eslint and prettier
+	- Install eslint
+	- Install @typescript-eslint/eslint-plugin
+	- Install eslint-plugin-react
+	- Install @typescript-eslint/parser
+	- Install prettier
+	- Install eslint-config-prettier
+	- Install eslint-plugin-prettier
+	- Add format and format:fix scripts to package.json
+	- Config eslint and prettier
+
+- Setup tailwindcss
+	- Install tailwindcss
+	- Config tailwindcss
+
+- Create styles folder for global styles
+
+===================================================================================
