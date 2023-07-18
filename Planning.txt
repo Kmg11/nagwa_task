@@ -1,0 +1,31 @@
+[ PROJECT PLANNING ]
+
+[ ✅ ] Create github repo
+[ ✅ ] Create planning.txt file
+[ ✅ ] Create README.md file
+[ ✅ ] Create .gitignore file
+[  ] Create frontend project
+				- [  ] Create react app with typescript
+				- [  ] Remove git from frontend project
+				- [  ] Create commits file
+				- [  ] Add eslint and setup config
+				- [  ] Add prettier and setup config
+				- [  ] Add tailwindcss and setup config
+				- [  ] Add react-query
+				- [  ] Add README.md file to explain folder structure
+[  ] Create backend project
+				- [  ] Create express app with typescript
+				- [  ] Create commits file
+				- [  ] Add eslint and setup config
+				- [  ] Add prettier and setup config
+				- [  ] Add swagger and setup config
+				- [  ] Add README.md file to explain folder structure
+[  ] Connect frontend with api
+[  ] Type README.md
+				- [  ] How to run frontend [ development, production ]
+				- [  ] How to run backend [ development, production ]
+				- [  ] Technologies used at frontend
+				- [  ] Technologies used at backend
+[  ] Make github repo public
+[  ] Deploy backend on render
+[  ] Deploy frontend on github pages
