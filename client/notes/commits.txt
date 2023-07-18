@@ -33,3 +33,19 @@ Start Frontend Project | Install Packages | Config | Create Main Structure
 - Create styles folder for global styles
 
 ===================================================================================
+
+Add default styles | Create Question component | Create Container component | Create [WordType, PosType]
+
+- Create global styles
+- Create @types folder
+- Create WordType
+- Create PosType
+- Create components folder
+- Create layout folder
+- Create Container component
+- Create Question component
+
+===================================================================================
+
+- Create Progress component
+- Create Welcome component
