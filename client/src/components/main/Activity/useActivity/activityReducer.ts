@@ -21,7 +21,6 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 ) => {
 	switch (action.type) {
 		case ActivityActionTypeEnum.SET_ACTIVITY: {
-			const questionsCount = action.payload.words.length;
 			const questions: QuestionType[] = action.payload.words.map((word) => ({
 				...word,
 				status: "unanswered",
@@ -33,31 +32,33 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 				questions,
 				currentQuestion: questions[0],
 				currentQuestionIndex: 0,
-				questionsCount,
+				questionsCount: action.payload.words.length,
 				answeredQuestionsCount: 0,
+				isLastQuestion: false,
 			};
 		}
 
 		case ActivityActionTypeEnum.SELECT_ANSWER: {
-			if (state.currentQuestion?.status !== "unanswered") return state;
+			if (state.currentQuestion === null) return state;
+			if (state.questions === null) return state;
+			if (state.currentQuestion.status !== "unanswered") return state;
 
 			const { answer: selectedAnswer } = action.payload;
 
 			return {
 				...state,
-				currentQuestion: { ...state.currentQuestion!, selectedAnswer },
+				currentQuestion: { ...state.currentQuestion, selectedAnswer },
 				questions: [
-					...state.questions!.slice(0, state.currentQuestionIndex),
-					{
-						...state.questions![state.currentQuestionIndex],
-						selectedAnswer,
-					},
-					...state.questions!.slice(state.currentQuestionIndex + 1),
+					...state.questions.slice(0, state.currentQuestionIndex),
+					{ ...state.questions[state.currentQuestionIndex], selectedAnswer },
+					...state.questions.slice(state.currentQuestionIndex + 1),
 				],
 			};
 		}
 
 		case ActivityActionTypeEnum.CHECK_ANSWER: {
+			if (state.currentQuestion === null) return state;
+			if (state.questions === null) return state;
 			if (state.currentQuestion?.selectedAnswer === null) return state;
 
 			const selectedAnswer =
@@ -69,27 +70,29 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 				...state,
 				answeredQuestionsCount: state.answeredQuestionsCount + 1,
 				currentQuestion: {
-					...state.currentQuestion!,
+					...state.currentQuestion,
 					status: isAnswerCorrect ? "correct" : "incorrect",
 				},
 				questions: [
-					...state.questions!.slice(0, state.currentQuestionIndex),
+					...state.questions.slice(0, state.currentQuestionIndex),
 					{
-						...state.questions![state.currentQuestionIndex],
+						...state.questions[state.currentQuestionIndex],
 						status: isAnswerCorrect ? "correct" : "incorrect",
 					},
-					...state.questions!.slice(state.currentQuestionIndex + 1),
+					...state.questions.slice(state.currentQuestionIndex + 1),
 				],
 			};
 		}
 
 		case ActivityActionTypeEnum.NEXT_QUESTION: {
+			if (state.currentQuestion === null) return state;
+			if (state.questions === null) return state;
 			if (state.isLastQuestion) return state;
 
 			return {
 				...state,
 				currentQuestionIndex: state.currentQuestionIndex + 1,
-				currentQuestion: state.questions![state.currentQuestionIndex + 1],
+				currentQuestion: state.questions[state.currentQuestionIndex + 1],
 				isLastQuestion:
 					state.currentQuestionIndex + 1 === state.questionsCount - 1,
 			};

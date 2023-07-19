@@ -111,12 +111,16 @@ Connect ActivityContext and activityReducer with Activity components | Handle se
 
 ===================================================================================
 
+Create ScoreScreen component | Enhance activityReducer | Enhance responsive
+
 - Create AnswerButton component
 - Enhance activityReducer
+- Enhance responsive
+
+===================================================================================
 
 - Create score screen
 - Create AppLoading component
-- Check responsive design
 - Add rules and style guide i follow
 	- Index is a collector
 	- don't use default export

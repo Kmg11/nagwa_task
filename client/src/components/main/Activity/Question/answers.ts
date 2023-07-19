@@ -1,6 +1,6 @@
 import { PosType } from "@types";
 
-interface AnswerType {
+export interface AnswerType {
 	label: "A" | "B" | "C" | "D";
 	pos: PosType;
 }

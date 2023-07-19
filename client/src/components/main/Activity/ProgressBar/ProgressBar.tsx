@@ -4,6 +4,7 @@ export const ProgressBar = () => {
 	const {
 		activityState: { answeredQuestionsCount, questionsCount },
 	} = useActivityContext();
+
 	const percentage = (answeredQuestionsCount / questionsCount) * 100 + "%";
 
 	return (

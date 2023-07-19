@@ -14,18 +14,13 @@ export const ActivityFooter = () => {
 	const isChecked = currentQuestion?.status !== "unanswered";
 
 	return (
-		<div className="mt-3 flex items-center gap-3 justify-center">
-			<AppButton
-				type="button"
-				className="bg-red-500 hover:bg-red-600"
-				onClick={exitActivity}
-			>
+		<div className="mt-3 flex items-center gap-3 justify-center flex-wrap">
+			<AppButton className="bg-red-500 hover:bg-red-600" onClick={exitActivity}>
 				Exit
 			</AppButton>
 
 			{!isChecked && (
 				<AppButton
-					type="button"
 					className={`
 						${
 							isSelected
@@ -41,13 +36,11 @@ export const ActivityFooter = () => {
 			)}
 
 			{!isLastQuestion && isChecked && (
-				<AppButton type="button" onClick={nextQuestion}>
-					Next
-				</AppButton>
+				<AppButton onClick={nextQuestion}>Next</AppButton>
 			)}
 
 			{isLastQuestion && isChecked && (
-				<AppButton type="button" className="bg-yellow-500 hover:bg-yellow-600">
+				<AppButton className="bg-yellow-500 hover:bg-yellow-600">
 					Submit
 				</AppButton>
 			)}
