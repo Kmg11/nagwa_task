@@ -1,13 +1,10 @@
-interface ProgressBarProps {
-	questionsNumber: number;
-	answeredQuestionsNumber: number;
-}
+import { useActivityContext } from "../ActivityProvider";
 
-export const ProgressBar = ({
-	answeredQuestionsNumber,
-	questionsNumber,
-}: ProgressBarProps) => {
-	const percentage = (answeredQuestionsNumber / questionsNumber) * 100 + "%";
+export const ProgressBar = () => {
+	const {
+		activityState: { answeredQuestionsCount, questionsCount },
+	} = useActivityContext();
+	const percentage = (answeredQuestionsCount / questionsCount) * 100 + "%";
 
 	return (
 		<div className="w-full h-2 mb-3 bg-gray-900 rounded relative">

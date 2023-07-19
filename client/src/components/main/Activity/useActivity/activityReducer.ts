@@ -12,6 +12,7 @@ export const activityInitialState: ActivityState = {
 	currentQuestionIndex: 0,
 	questionsCount: 0,
 	answeredQuestionsCount: 0,
+	isLastQuestion: false,
 };
 
 export const activityReducer: Reducer<ActivityState, ActivityAction> = (
@@ -24,6 +25,7 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 			const questions: QuestionType[] = action.payload.words.map((word) => ({
 				...word,
 				status: "unanswered",
+				selectedAnswer: null,
 			}));
 
 			return {
@@ -36,13 +38,40 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 			};
 		}
 
-		case ActivityActionTypeEnum.CHECK_ANSWER: {
-			const { answer } = action.payload;
-			const isAnswerCorrect =
-				answer.toLowerCase() === state.currentQuestion?.pos.toLowerCase();
+		case ActivityActionTypeEnum.SELECT_ANSWER: {
+			if (state.currentQuestion?.status !== "unanswered") return state;
+
+			const { answer: selectedAnswer } = action.payload;
 
 			return {
 				...state,
+				currentQuestion: { ...state.currentQuestion!, selectedAnswer },
+				questions: [
+					...state.questions!.slice(0, state.currentQuestionIndex),
+					{
+						...state.questions![state.currentQuestionIndex],
+						selectedAnswer,
+					},
+					...state.questions!.slice(state.currentQuestionIndex + 1),
+				],
+			};
+		}
+
+		case ActivityActionTypeEnum.CHECK_ANSWER: {
+			if (state.currentQuestion?.selectedAnswer === null) return state;
+
+			const selectedAnswer =
+				state.currentQuestion?.selectedAnswer?.toLowerCase();
+			const isAnswerCorrect =
+				selectedAnswer === state.currentQuestion?.pos.toLowerCase();
+
+			return {
+				...state,
+				answeredQuestionsCount: state.answeredQuestionsCount + 1,
+				currentQuestion: {
+					...state.currentQuestion!,
+					status: isAnswerCorrect ? "correct" : "incorrect",
+				},
 				questions: [
 					...state.questions!.slice(0, state.currentQuestionIndex),
 					{
@@ -55,11 +84,14 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 		}
 
 		case ActivityActionTypeEnum.NEXT_QUESTION: {
+			if (state.isLastQuestion) return state;
+
 			return {
 				...state,
-				answeredQuestionsCount: state.answeredQuestionsCount + 1,
 				currentQuestionIndex: state.currentQuestionIndex + 1,
 				currentQuestion: state.questions![state.currentQuestionIndex + 1],
+				isLastQuestion:
+					state.currentQuestionIndex + 1 === state.questionsCount - 1,
 			};
 		}
 

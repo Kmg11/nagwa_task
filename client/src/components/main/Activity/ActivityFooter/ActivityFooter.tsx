@@ -1,8 +1,17 @@
 import { AppButton } from "components/ui";
 import { useAppContext } from "context";
+import { useActivityContext } from "../ActivityProvider";
 
 export const ActivityFooter = () => {
 	const { exitActivity } = useAppContext();
+	const {
+		activityState: { currentQuestion, isLastQuestion },
+		checkAnswer,
+		nextQuestion,
+	} = useActivityContext();
+
+	const isSelected = currentQuestion?.selectedAnswer !== null;
+	const isChecked = currentQuestion?.status !== "unanswered";
 
 	return (
 		<div className="mt-3 flex items-center gap-3 justify-center">
@@ -14,15 +23,34 @@ export const ActivityFooter = () => {
 				Exit
 			</AppButton>
 
-			<AppButton type="button" className="bg-green-500 hover:bg-green-600">
-				Check
-			</AppButton>
+			{!isChecked && (
+				<AppButton
+					type="button"
+					className={`
+						${
+							isSelected
+								? "bg-blue-500 hover:bg-blue-600"
+								: "bg-gray-500 hover:bg-gray-600"
+						}
+					`}
+					disabled={!isSelected}
+					onClick={checkAnswer}
+				>
+					Check
+				</AppButton>
+			)}
 
-			<AppButton type="button">Next</AppButton>
+			{!isLastQuestion && isChecked && (
+				<AppButton type="button" onClick={nextQuestion}>
+					Next
+				</AppButton>
+			)}
 
-			<AppButton type="button" className="bg-yellow-500 hover:bg-yellow-600">
-				Submit
-			</AppButton>
+			{isLastQuestion && isChecked && (
+				<AppButton type="button" className="bg-yellow-500 hover:bg-yellow-600">
+					Submit
+				</AppButton>
+			)}
 		</div>
 	);
 };

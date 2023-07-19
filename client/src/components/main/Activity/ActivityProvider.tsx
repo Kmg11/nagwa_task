@@ -5,7 +5,8 @@ import { PosType } from "@types";
 interface ActivityContextType {
 	activityState: ActivityState;
 	nextQuestion: () => void;
-	checkAnswer: (answer: PosType) => void;
+	checkAnswer: () => void;
+	selectAnswer: (answer: PosType) => void;
 }
 
 interface ActivityProviderProps {

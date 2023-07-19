@@ -13,16 +13,26 @@ export const useActivity = () => {
 		});
 	};
 
-	const checkAnswer = (answer: PosType) => {
+	const selectAnswer = (answer: PosType) => {
 		dispatch({
-			type: ActivityActionTypeEnum.CHECK_ANSWER,
+			type: ActivityActionTypeEnum.SELECT_ANSWER,
 			payload: { answer },
 		});
+	};
+
+	const checkAnswer = () => {
+		dispatch({ type: ActivityActionTypeEnum.CHECK_ANSWER });
 	};
 
 	const nextQuestion = () => {
 		dispatch({ type: ActivityActionTypeEnum.NEXT_QUESTION });
 	};
 
-	return { activityState: state, setActivity, nextQuestion, checkAnswer };
+	return {
+		activityState: state,
+		setActivity,
+		selectAnswer,
+		checkAnswer,
+		nextQuestion,
+	};
 };

@@ -6,8 +6,13 @@ import { ActivityProvider } from "./ActivityProvider";
 import { useEffect } from "react";
 
 export const Activity = () => {
-	const { activityState, setActivity, checkAnswer, nextQuestion } =
-		useActivity();
+	const {
+		activityState,
+		setActivity,
+		checkAnswer,
+		nextQuestion,
+		selectAnswer,
+	} = useActivity();
 
 	useEffect(() => {
 		setActivity([
@@ -25,15 +30,12 @@ export const Activity = () => {
 	}, []);
 
 	return (
-		<ActivityProvider value={{ activityState, checkAnswer, nextQuestion }}>
+		<ActivityProvider
+			value={{ activityState, checkAnswer, nextQuestion, selectAnswer }}
+		>
 			<div>
-				<ProgressBar answeredQuestionsNumber={5} questionsNumber={10} />
-
-				<Question
-					questionNumber={1}
-					word={{ id: 1, pos: "noun", word: "dog" }}
-				/>
-
+				<ProgressBar />
+				<Question />
 				<ActivityFooter />
 			</div>
 		</ActivityProvider>

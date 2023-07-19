@@ -99,12 +99,23 @@ Create ActivityContext | Create activityReducer | Create QuestionType
 
 ===================================================================================
 
-- Connect ActivityContext and activityReducer with Activity components
-- Count of question answered and remaining
-- Create AppLoading component
+Connect ActivityContext and activityReducer with Activity components | Handle select answer | Handle check answer
+
+- Connect ActivityContext and activityReducer with [ ProgressBar, Question, ActivityFooter ] components
+- Create selectAnswer action
+- Create selectAnswer function
 - Handle select answer
-- Create check answer button and next question button
-- Handle functionality for check answer button and next question button and get next question
+- Handle check answer
+- Block select answer if question is checked
+- Block check if no answer selected
+
+===================================================================================
+
+- Create AnswerButton component
+- Enhance activityReducer
+
+- Create score screen
+- Create AppLoading component
 - Check responsive design
 - Add rules and style guide i follow
 	- Index is a collector
