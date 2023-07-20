@@ -3,9 +3,12 @@ import { ActivityFooter } from "./ActivityFooter/ActivityFooter";
 import { ProgressBar } from "./ProgressBar/ProgressBar";
 import { Question } from "./Question/Question";
 import { ActivityProvider } from "./ActivityProvider";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Score } from "./Score/Score";
 
 export const Activity = () => {
+	const [showScore, setShowScore] = useState(false);
+
 	const {
 		activityState,
 		setActivity,
@@ -31,13 +34,23 @@ export const Activity = () => {
 
 	return (
 		<ActivityProvider
-			value={{ activityState, checkAnswer, nextQuestion, selectAnswer }}
+			value={{
+				activityState,
+				checkAnswer,
+				nextQuestion,
+				selectAnswer,
+				setShowScore,
+			}}
 		>
-			<div>
-				<ProgressBar />
-				<Question />
-				<ActivityFooter />
-			</div>
+			{!showScore && (
+				<div>
+					<ProgressBar />
+					<Question />
+					<ActivityFooter />
+				</div>
+			)}
+
+			{showScore && <Score />}
 		</ActivityProvider>
 	);
 };

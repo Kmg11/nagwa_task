@@ -7,6 +7,7 @@ interface ActivityContextType {
 	nextQuestion: () => void;
 	checkAnswer: () => void;
 	selectAnswer: (answer: PosType) => void;
+	setShowScore: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface ActivityProviderProps {

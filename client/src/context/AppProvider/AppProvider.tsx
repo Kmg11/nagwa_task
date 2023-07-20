@@ -1,8 +1,8 @@
+import { ScreensType } from "@types";
 import React from "react";
 
 interface AppContextType {
-	openActivity: () => void;
-	exitActivity: () => void;
+	setCurrentScreen: React.Dispatch<React.SetStateAction<ScreensType>>;
 }
 
 interface AppProviderProps {

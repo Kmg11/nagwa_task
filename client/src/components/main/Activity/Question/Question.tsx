@@ -8,7 +8,7 @@ export const Question = () => {
 	} = useActivityContext();
 
 	return (
-		<div className="bg-gray-900 py-6 px-6 rounded-tl-2xl rounded-br-2xl text-center">
+		<div className="mb-7">
 			<h2 className="text-2xl font-bold bg-purple-700 inline-block py-2 px-3 rounded-tl-2xl rounded-br-2xl mb-4">
 				Question {currentQuestionIndex + 1} of {questionsCount}
 			</h2>

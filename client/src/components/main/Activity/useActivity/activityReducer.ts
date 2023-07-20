@@ -8,10 +8,14 @@ import { QuestionType } from "@types";
 
 export const activityInitialState: ActivityState = {
 	questions: null,
+
 	currentQuestion: null,
 	currentQuestionIndex: 0,
+
 	questionsCount: 0,
 	answeredQuestionsCount: 0,
+	correctAnswersCount: 0,
+
 	isLastQuestion: false,
 };
 
@@ -69,6 +73,9 @@ export const activityReducer: Reducer<ActivityState, ActivityAction> = (
 			return {
 				...state,
 				answeredQuestionsCount: state.answeredQuestionsCount + 1,
+				correctAnswersCount: isAnswerCorrect
+					? state.correctAnswersCount + 1
+					: state.correctAnswersCount,
 				currentQuestion: {
 					...state.currentQuestion,
 					status: isAnswerCorrect ? "correct" : "incorrect",

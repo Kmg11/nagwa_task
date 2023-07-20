@@ -9,10 +9,14 @@ export enum ActivityActionTypeEnum {
 
 export interface ActivityState {
 	questions: QuestionType[] | null;
+
 	currentQuestion: QuestionType | null;
 	currentQuestionIndex: number;
+
 	questionsCount: number;
 	answeredQuestionsCount: number;
+	correctAnswersCount: number;
+
 	isLastQuestion: boolean;
 }
 

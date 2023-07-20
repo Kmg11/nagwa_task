@@ -28,8 +28,8 @@ export const AnswerButton = ({ answer }: AnswerButtonProps) => {
 				bg-gray-800 text-white font-bold py-2 px-4 rounded capitalize transition-colors
 				${isSameAnswer ? "bg-purple-700" : ""}
 				${isChecked ? "cursor-default" : "hover:bg-purple-700"}
-				${isChecked && isSameAnswer && isAnswerCorrect ? "bg-green-700" : ""}
-				${isChecked && isSameAnswer && isAnswerIncorrect ? "bg-red-700" : ""}
+				${isChecked && isSameAnswer && isAnswerCorrect ? "!bg-green-700" : ""}
+				${isChecked && isSameAnswer && isAnswerIncorrect ? "!bg-red-700" : ""}
 			`}
 			disabled={isChecked}
 			onClick={handleSelectAnswer}

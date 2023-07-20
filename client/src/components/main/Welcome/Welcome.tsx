@@ -2,10 +2,10 @@ import { AppButton } from "components";
 import { useAppContext } from "context";
 
 export const Welcome = () => {
-	const { openActivity } = useAppContext();
+	const { setCurrentScreen } = useAppContext();
 
 	return (
-		<main className="bg-gray-900 py-6 px-6 rounded text-center">
+		<main>
 			<h1 className="text-2xl font-bold inline-block py-2 px-3 rounded-tl-2xl rounded-br-2xl mb-4">
 				Part of Speech Activity
 			</h1>
@@ -18,7 +18,7 @@ export const Welcome = () => {
 				grammar and communication skills in English. Let&apos;s begin!
 			</p>
 
-			<AppButton type="button" onClick={openActivity}>
+			<AppButton type="button" onClick={() => setCurrentScreen("activity")}>
 				Start Activity
 			</AppButton>
 		</main>

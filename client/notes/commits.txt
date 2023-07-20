@@ -119,7 +119,20 @@ Create ScoreScreen component | Enhance activityReducer | Enhance responsive
 
 ===================================================================================
 
-- Create score screen
+Enhance styles | Create Score component | Handle try again | Add correctAnswersCount to activityReducer
+
+- Enhance styles
+- Replace startActivity state in App with currentScreen state
+- Create Score component
+- Handle show score screen
+- Handle submit activity
+- Handle try again
+- Fix AnswerButton correct color problem
+- Add correctAnswersCount to activityReducer
+
+===================================================================================
+
+- Decrease states in activityReducer
 - Create AppLoading component
 - Add rules and style guide i follow
 	- Index is a collector

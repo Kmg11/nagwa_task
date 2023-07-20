@@ -1,0 +1,23 @@
+.scoreBox {
+	@apply py-4 px-5 bg-purple-700 flex items-center justify-center flex-col;
+}
+
+.scoreNumber {
+	@apply text-4xl text-center font-bold mb-1;
+}
+
+.scoreText {
+	@apply text-center text-white text-sm font-bold;
+}
+
+.scoreList {
+	@apply flex flex-col items-center justify-center gap-2 mt-4;
+}
+
+.scoreListItem {
+	@apply flex items-center justify-center gap-2;
+}
+
+.scoreListItemText {
+	@apply text-white text-sm font-bold;
+}
