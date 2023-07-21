@@ -37,5 +37,12 @@ Create getRank controller | Create rank endpoint swagger documentation
 
 ===================================================================================
 
+Uninstall not needed packages | Remove validateResource middleware | Handle build config
+
+- Uninstall not needed packages [ xss-clean, eslint-plugin-import, eslint-plugin-n, eslint-plugin-promise, zod ]
+- Remove validateResource middleware
+- Handle build config
+
+===================================================================================
+
 - Add production server in swagger
-- Uninstall unused packages [ zod, @types/zod ]
