@@ -1,0 +1,22 @@
+===================================================================================
+
+This file tracks changes, commits, and feature planning, streamlining the development process and maximizing productivity. It's an essential tool for staying organized and on track.
+
+===================================================================================
+
+Setup
+
+- Setup environment variables
+- Setup logger
+- Add [ start, dev, build, lint, lint:fix ] scripts
+- Setup error handling
+- Setup security
+- Setup swagger
+- Setup important packages
+- Setup typescript
+- Setup eslint and prettier
+
+===================================================================================
+
+- Add production server in swagger
+- Test error handling

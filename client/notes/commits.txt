@@ -132,7 +132,7 @@ Enhance styles | Create Score component | Handle try again | Add correctAnswersC
 
 ===================================================================================
 
-- Decrease states in activityReducer
+- Show correct score and rank
 - Create AppLoading component
 - Add rules and style guide i follow
 	- Index is a collector

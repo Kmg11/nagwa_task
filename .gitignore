@@ -22,6 +22,9 @@
 /client/.DS_Store
 /server/.DS_Store
 
+/client/.env
+/server/.env
+
 /client/.env.local
 /server/.env.local
 
