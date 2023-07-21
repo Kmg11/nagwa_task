@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { StatusCodes } from "http-status-codes";
-import { getWords } from "../controllers";
+import { getRank, getWords } from "../controllers";
 
 export function routes(app: Application) {
 	app.get("/", (req, res) => {
@@ -14,8 +14,5 @@ export function routes(app: Application) {
 
 	app.get("/api/v1/words", getWords);
 
-	app.post("/api/v1/rank", (req, res) => {
-		console.log("POST /api/v1/words");
-		res.status(StatusCodes.OK).send("POST /api/v1/rank");
-	});
+	app.post("/api/v1/rank", getRank);
 }

@@ -30,5 +30,12 @@ Create getWords controller | Create WordType interface | Create words endpoint s
 
 ===================================================================================
 
+Create getRank controller | Create rank endpoint swagger documentation
+
+- Create getRank controller
+- Create getRank controller swagger documentation
+
+===================================================================================
+
 - Add production server in swagger
 - Uninstall unused packages [ zod, @types/zod ]
