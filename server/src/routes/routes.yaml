@@ -1,0 +1,39 @@
+/words:
+  # * Get 10 words
+  get:
+    summary: Get 10 words
+    description: Get 10 words
+
+    tags:
+      - Words
+
+    responses:
+      "200":
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                words:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                        description: Word id
+                      word:
+                        type: string
+                        description: Word
+                      pos:
+                        type: string
+                        enum:
+                          - noun
+                          - verb
+                          - adjective
+                          - adverb
+                        description: Part of speech
+
+      "500":
+        $ref: "#/components/responses/InternalServerError"

@@ -18,5 +18,17 @@ Setup
 
 ===================================================================================
 
+Create getWords controller | Create WordType interface | Create words endpoint swagger documentation
+
+- Create data folder 
+- Add data.json file
+- Create controllers folder
+- Create getWords controller
+- Create @types folder
+- Create WordType interface
+- Create words endpoint swagger documentation
+
+===================================================================================
+
 - Add production server in swagger
-- Test error handling
+- Uninstall unused packages [ zod, @types/zod ]

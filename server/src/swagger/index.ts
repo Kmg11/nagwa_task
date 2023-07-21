@@ -11,7 +11,7 @@ const port = config.get<string>("port");
 const options: swaggerJsdoc.OAS3Options = {
 	definition: {
 		openapi: "3.0.0",
-		info: { title: "Social Media App API", version },
+		info: { title: "Nagwa Task API", version },
 		components: {
 			schemas: { ...errorSchemas },
 			responses: { ...errorsResponses },
@@ -25,7 +25,7 @@ const options: swaggerJsdoc.OAS3Options = {
 		],
 	},
 
-	apis: ["./src/routes/*.ts"],
+	apis: ["./src/routes/**/*.yaml"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
