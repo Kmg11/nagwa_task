@@ -4,15 +4,8 @@
 [ ✅ ] Create planning.txt file
 [ ✅ ] Create README.md file
 [ ✅ ] Create .gitignore file
-[  ] Create frontend project
-[  ] Create backend project
-				- [  ] Create express app with typescript
-				- [  ] Create commits file
-				- [  ] Add eslint and setup config
-				- [  ] Add prettier and setup config
-				- [  ] Add swagger and setup config
-				- [  ] Add README.md file to explain folder structure
-				- [  ] Do not return answer in api
+[ ✅ ] Create frontend project
+[ ✅ ] Create backend project
 [  ] Connect frontend with api
 [  ] Type README.md
 				- [  ] How to run frontend [ development, production ]
