@@ -19,5 +19,6 @@ export const useGetWordsQuery = ({ onSuccess }: UseGetWordsQueryProps) => {
 			);
 		},
 		onSuccess,
+		cacheTime: 0,
 	});
 };

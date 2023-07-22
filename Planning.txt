@@ -8,13 +8,7 @@
 [ ✅ ] Create backend project
 [ ✅ ] Connect frontend with api
 [ ✅ ] Deploy backend on render
-[  ] Deploy frontend on render
-[  ] Make github repo public
-[  ] Type README.md
-				- [  ] Online demo
-				- [  ] How to run frontend [ development, production ]
-				- [  ] How to run backend [ development, production ]
-				- [  ] Technologies used at frontend
-				- [  ] Technologies used at backend
-				- [  ] Suggestions for future improvements
-[  ] Final test
+[ ✅ ] Deploy frontend on render
+[ ✅ ] Make github repo public
+[ ✅ ] README.md
+[ ✅ ] Final test

@@ -155,3 +155,7 @@ Connect api with frontend | Create useGetWordsQuery and useGetRankMutation hook 
 Fix check active color
 
 ===================================================================================
+
+Make cacheTime: 0 for useGetWordsQuery hook
+
+===================================================================================
