@@ -6,6 +6,17 @@ import { logger } from "../utils//logger/logger.util";
 import { errorSchemas, errorsResponses } from "./errors/errors";
 
 const port = config.get<string>("port");
+const nodeEnv = config.get<"development" | "production">("nodeEnv");
+
+const developmentServer = {
+	url: `http://localhost:${port}/api/v1`,
+	description: "Development server",
+};
+
+const productionServer = {
+	url: "https://nagwa-task.onrender.com/api/v1",
+	description: "Production server",
+};
 
 const options: swaggerJsdoc.OAS3Options = {
 	definition: {
@@ -16,16 +27,8 @@ const options: swaggerJsdoc.OAS3Options = {
 			responses: { ...errorsResponses },
 		},
 
-		servers: [
-			{
-				url: `http://localhost:${port}/api/v1`,
-				description: "Development server",
-			},
-			{
-				url: "https://nagwa-task.onrender.com/api/v1",
-				description: "Production server",
-			},
-		],
+		servers:
+			nodeEnv === "development" ? [developmentServer] : [productionServer],
 	},
 
 	apis: ["./src/routes/**/*.yaml"],

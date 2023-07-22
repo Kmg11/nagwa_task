@@ -49,5 +49,9 @@ Add production server in swagger
 
 ===================================================================================
 
-- Score can be zero fix from backend
-- Handle show correct server depend on environment mode in swagger
+Fix getRank controller | Handle switch between development and production server in swagger depend on NODE_ENV
+
+- Fix error problem when score is 0 in getRank controller
+- Handle switch between development and production server in swagger depend on NODE_ENV
+
+===================================================================================

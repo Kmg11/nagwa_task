@@ -3,12 +3,16 @@ import { StatusCodes } from "http-status-codes";
 import Data from "../../data/data.json";
 import { BadRequestError } from "../../errors";
 
-type GetRankRequestType = Request<unknown, unknown, { score: number }>;
+type GetRankRequestType = Request<
+	unknown,
+	unknown,
+	{ score: number | undefined }
+>;
 
 export const getRank = (req: GetRankRequestType, res: Response) => {
 	const { score } = req.body;
 
-	if (!score) throw new BadRequestError("Score is required.");
+	if (score === undefined) throw new BadRequestError("Score is required.");
 
 	if (typeof score !== "number") {
 		throw new BadRequestError("Score must be a number.");

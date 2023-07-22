@@ -151,3 +151,7 @@ Connect api with frontend | Create useGetWordsQuery and useGetRankMutation hook 
 - Add AppLoading and ErrorMessage to Score component
 
 ===================================================================================
+
+Fix check active color
+
+===================================================================================

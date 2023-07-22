@@ -28,8 +28,8 @@ export const ActivityFooter = () => {
 					className={`
 						${
 							isSelected
-								? "bg-blue-500 hover:bg-blue-600"
-								: "bg-gray-500 hover:bg-gray-600"
+								? "!bg-blue-500 !hover:bg-blue-600"
+								: "!bg-gray-500 !hover:bg-gray-600"
 						}
 					`}
 					disabled={!isSelected}
