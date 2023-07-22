@@ -3,11 +3,19 @@ import { ActivityFooter } from "./ActivityFooter/ActivityFooter";
 import { ProgressBar } from "./ProgressBar/ProgressBar";
 import { Question } from "./Question/Question";
 import { ActivityProvider } from "./ActivityProvider";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Score } from "./Score/Score";
+import { AppErrorMessage, AppLoading } from "components";
+import { useGetWordsQuery } from "api";
 
 export const Activity = () => {
 	const [showScore, setShowScore] = useState(false);
+
+	const { data, isLoading, isError, error } = useGetWordsQuery({
+		onSuccess: (data) => {
+			setActivity(data.data.words);
+		},
+	});
 
 	const {
 		activityState,
@@ -16,21 +24,6 @@ export const Activity = () => {
 		nextQuestion,
 		selectAnswer,
 	} = useActivity();
-
-	useEffect(() => {
-		setActivity([
-			{ id: 1, pos: "noun", word: "dog" },
-			{ id: 2, pos: "noun", word: "cat" },
-			{ id: 3, pos: "noun", word: "bird" },
-			{ id: 4, pos: "noun", word: "fish" },
-			{ id: 5, pos: "verb", word: "eat" },
-			{ id: 6, pos: "verb", word: "drink" },
-			{ id: 7, pos: "verb", word: "sleep" },
-			{ id: 8, pos: "verb", word: "run" },
-			{ id: 9, pos: "adjective", word: "big" },
-			{ id: 10, pos: "adjective", word: "small" },
-		]);
-	}, []);
 
 	return (
 		<ActivityProvider
@@ -42,7 +35,11 @@ export const Activity = () => {
 				setShowScore,
 			}}
 		>
-			{!showScore && (
+			{isLoading && <AppLoading />}
+
+			{isError && <AppErrorMessage>{error.message}</AppErrorMessage>}
+
+			{!showScore && data && (
 				<div>
 					<ProgressBar />
 					<Question />

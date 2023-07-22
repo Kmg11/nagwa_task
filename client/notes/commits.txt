@@ -132,14 +132,22 @@ Enhance styles | Create Score component | Handle try again | Add correctAnswersC
 
 ===================================================================================
 
-- Show correct score and rank
+Connect api with frontend | Create useGetWordsQuery and useGetRankMutation hook | Create AppLoading and AppErrorMessage component
+
+- Create .env and .env.example files
+- Add REACT_APP_API_URL to .env.example file
+- Add REACT_APP_API_URL to .env file
+- Install react-query
+- Install axios
+- Create api folder
+- Create useGetWordsQuery hook
+- Create useGetRankMutation hook
+- Create ApiErrorResponseType
 - Create AppLoading component
-- Add rules and style guide i follow
-	- Index is a collector
-	- don't use default export
-	- use camelCase for variables and functions
-	- use PascalCase for components
-	- add prefix for ui components for example: AppButton
-	- add .ts for non jsx files
-	- add .tsx for jsx files or hooks
-- Add README.md file for Structure
+- Create AppErrorMessage component
+- Connect useGetWordsQuery hook with Activity component
+- Add AppLoading and ErrorMessage to Activity component
+- Connect useGetRankMutation hook with Score component
+- Add AppLoading and ErrorMessage to Score component
+
+===================================================================================

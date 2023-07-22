@@ -46,3 +46,8 @@ Uninstall not needed packages | Remove validateResource middleware | Handle buil
 ===================================================================================
 
 Add production server in swagger
+
+===================================================================================
+
+- Score can be zero fix from backend
+- Handle show correct server depend on environment mode in swagger

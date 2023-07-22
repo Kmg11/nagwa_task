@@ -6,12 +6,15 @@
 [ ✅ ] Create .gitignore file
 [ ✅ ] Create frontend project
 [ ✅ ] Create backend project
-[  ] Connect frontend with api
+[ ✅ ] Connect frontend with api
+[ ✅ ] Deploy backend on render
+[  ] Deploy frontend on render
+[  ] Make github repo public
 [  ] Type README.md
+				- [  ] Online demo
 				- [  ] How to run frontend [ development, production ]
 				- [  ] How to run backend [ development, production ]
 				- [  ] Technologies used at frontend
 				- [  ] Technologies used at backend
-[  ] Make github repo public
-[  ] Deploy backend on render
-[  ] Deploy frontend on github pages
+				- [  ] Suggestions for future improvements
+[  ] Final test
